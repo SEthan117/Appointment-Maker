@@ -4,7 +4,7 @@
 
 typedef struct appointment
 {
-	char year[MAXYEAR];
+	int year;
 	int date;
 	int time;
 	char description[MAXVAL];
@@ -13,12 +13,12 @@ typedef struct appointment
 	struct appointment* prev;
 }APPT, *P_APPT;
 
-P_APPT createAppointment(char[], int, int, char[]);
+P_APPT createAppointment(int, int, int, char[]);
 
 /* === Getter functions === */
 
 // Get appointment year
-char* getYear(APPT);
+int getYear(APPT);
 
 // Get appointment date
 int getDate(APPT);
@@ -35,10 +35,10 @@ P_APPT getNext(APPT);
 // Get address of previous appointment
 P_APPT getPrevious(APPT);
 
-// Set appointment year
-void setYear(P_APPT, char[]);
-
 /* === Setter functions === */
+
+// Set appointment year
+void setYear(P_APPT, int);
 
 // Set appointment date
 void setDate(P_APPT, int);

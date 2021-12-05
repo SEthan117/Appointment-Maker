@@ -4,11 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-P_APPT createAppointment(char year[], int date, int time, char description[])
+P_APPT createAppointment(int year, int date, int time, char description[])
 {
 	P_APPT newAppt = (P_APPT)malloc(sizeof(APPT));
 
-	strcpy(newAppt->year, year);
+	newAppt->year = year;
 	newAppt->date = date;
 	newAppt->time = time;
 	strcpy(newAppt->description, description);
@@ -19,7 +19,7 @@ P_APPT createAppointment(char year[], int date, int time, char description[])
 	return newAppt;
 }
 
-char* getYear(APPT appointment)
+int getYear(APPT appointment)
 {
 	return appointment.year;
 }
@@ -49,9 +49,9 @@ P_APPT getPrevious(APPT appointment)
 	return appointment.prev;
 }
 
-void setYear(P_APPT p_appointment, char year[])
+void setYear(P_APPT p_appointment, int year)
 {
-	strcpy(p_appointment->year, year);
+	p_appointment->year = year;
 }
 
 void setDate(P_APPT p_appointment, int date)
