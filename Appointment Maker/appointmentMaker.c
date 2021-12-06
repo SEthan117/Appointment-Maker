@@ -8,13 +8,13 @@ P_APPT createAppointment(int year, int date, int time, char description[])
 {
 	P_APPT newAppt = (P_APPT)malloc(sizeof(APPT));
 
-	newAppt->year = year;
-	newAppt->date = date;
-	newAppt->time = time;
-	strcpy(newAppt->description, description);
+	setYear(newAppt, year);
+	setDate(newAppt, date);
+	setTime(newAppt, time);
+	setDescription(newAppt, description);
 
-	newAppt->next = NULL;
-	newAppt->prev = NULL;
+	setNext(newAppt, NULL);
+	setPrevious(newAppt, NULL);
 
 	return newAppt;
 }
