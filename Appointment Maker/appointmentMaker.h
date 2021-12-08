@@ -1,30 +1,22 @@
 #pragma once
 #define MAXVAL  100
-#define MAXYEAR  10
+//#define MAXYEAR  10
 
 typedef struct appointment
 {
-	int year;
-	int date;
-	int time;
+	char date_time[MAXVAL];
 	char description[MAXVAL];
 
 	struct appointment* next;
 	struct appointment* prev;
-}APPT, *P_APPT;
+}APPT, * P_APPT;
 
-P_APPT createAppointment(int, int, int, char[]);
+P_APPT createAppointment(char[], char[]);
 
 /* === Getter functions === */
 
-// Get appointment year
-int getYear(APPT);
-
-// Get appointment date
-int getDate(APPT);
-
-// Get appointment time
-int getTime(APPT);
+// Get date/time string
+char* getDateTime(APPT);
 
 // Get appointment description
 char* getDescription(APPT);
@@ -37,14 +29,8 @@ P_APPT getPrevious(APPT);
 
 /* === Setter functions === */
 
-// Set appointment year
-void setYear(P_APPT, int);
-
-// Set appointment date
-void setDate(P_APPT, int);
-
-// Set appointment time
-void setTime(P_APPT, int);
+// Set appointment date/time (yyyy-mm-ddThh:mm)
+void setDateTime(P_APPT, char[]);
 
 // Set appointment description
 void setDescription(P_APPT, char[]);
