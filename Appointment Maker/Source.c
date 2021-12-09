@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "appointmentMaker.h"
 
 int main()
 {
+	P_APPT apptList = NULL;
 	bool apptProg = true;
 	int option;
 	printf("*****************************\n");
@@ -31,6 +33,7 @@ int main()
 		{
 		case 1:
 			printf("Add a new appointment selected\n");
+			apptList = createAppointment();
 			break;
 
 		case 2:

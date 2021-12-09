@@ -40,3 +40,8 @@ void setNext(P_APPT, P_APPT);
 
 // Set address of previous appointment
 void setPrevious(P_APPT, P_APPT);
+
+void saveAppt(P_APPT);
+P_APPT readAppt(P_APPT);
+P_APPT addAppt(P_APPT);
+P_APPT updateList(P_APPT, P_APPT);
