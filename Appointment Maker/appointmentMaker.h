@@ -65,4 +65,6 @@ void displayAppointment(P_APPT);
 void displayAppointmentRange(P_APPT);
 
 // Search for an appointment within a list
-void searchAppointment(P_APPT);
+P_APPT searchAppointment(P_APPT, char[]);
+
+P_APPT removeAppt(P_APPT);

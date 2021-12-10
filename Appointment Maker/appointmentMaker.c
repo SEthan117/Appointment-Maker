@@ -151,7 +151,59 @@ void displayAppointmentRange(P_APPT head)
 
 }
 
-void searchAppointment(P_APPT head)
+P_APPT searchAppointment(P_APPT apptList, char date_time[])
 {
+	if (apptList == NULL) { // have one book?
+		return NULL;
+	}
+	if (apptList->next == NULL) {
+		if (strcmp(apptList->date_time, date_time) == 1) { 
 
+			return apptList;
+		}
+		else {
+			return NULL;
+
+		}
+	}
+
+	P_APPT currentAppt = apptList;
+	while (currentAppt->next != NULL) {
+		if (!strcmp(currentAppt->date_time, date_time)) {
+
+			return currentAppt;
+		}
+		else {
+			currentAppt = currentAppt->next;
+
+		}
+
+	}
+
+	return NULL;
+
+}
+
+P_APPT removeAppt(P_APPT apptList)
+{
+	char date[MAXVAL];
+	printf("Please enter date of appointment to remove: ");
+	scanf_s("%s", &date);
+	P_APPT apptToRemove = searchAppointment(apptList, date);
+
+	if (apptToRemove == NULL) {
+		return apptList;
+	}
+
+	if (apptToRemove->prev == NULL) {
+		apptList = apptList->next;
+		apptList->prev = NULL;
+	}
+	else {
+		apptToRemove->prev->next = apptToRemove->next;
+		apptToRemove->next->prev = apptToRemove->prev;
+	}
+	free(apptToRemove);
+
+	return apptList;
 }
