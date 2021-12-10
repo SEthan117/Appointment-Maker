@@ -125,3 +125,33 @@ P_APPT readAppt(P_APPT apptList)
 
 	return apptList;
 }
+
+void addNewAppointment(P_APPT head)
+{
+
+}
+
+void deleteAppointment(P_APPT head)
+{
+
+}
+
+void updateAppointment(P_APPT head)
+{
+
+}
+
+void displayAppointment(P_APPT head)
+{
+
+}
+
+void displayAppointmentRange(P_APPT head)
+{
+
+}
+
+void searchAppointment(P_APPT head)
+{
+
+}

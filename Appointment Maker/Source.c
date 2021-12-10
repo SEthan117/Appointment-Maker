@@ -5,7 +5,7 @@
 
 int main()
 {
-	P_APPT apptList = NULL;
+	P_APPT apptListHead = NULL;
 	bool apptProg = true;
 	int option;
 	printf("*****************************\n");
@@ -33,7 +33,7 @@ int main()
 		{
 		case 1:
 			printf("Add a new appointment selected\n");
-			apptList = createAppointment();
+			apptListHead = createAppointment();
 			break;
 
 		case 2:

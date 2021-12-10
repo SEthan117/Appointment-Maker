@@ -45,3 +45,23 @@ void saveAppt(P_APPT);
 P_APPT readAppt(P_APPT);
 P_APPT addAppt(P_APPT);
 P_APPT updateList(P_APPT, P_APPT);
+
+/* === Main program options functions === */
+
+// Add a new appointment to a list
+void addNewAppointment(P_APPT);
+
+// Delete an appointment from a list
+void deleteAppointment(P_APPT);
+
+// Update an existing appointment within a list
+void updateAppointment(P_APPT);
+
+// Display a single appointment within a list
+void displayAppointment(P_APPT);
+
+// Display a range of appointments within a list
+void displayAppointmentRange(P_APPT);
+
+// Search for an appointment within a list
+void searchAppointment(P_APPT);
