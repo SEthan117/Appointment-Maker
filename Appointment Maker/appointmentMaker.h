@@ -11,6 +11,7 @@ typedef struct appointment
 	struct appointment* prev;
 }APPT, * P_APPT;
 
+// Constructor for appointment
 P_APPT createAppointment(char[], char[]);
 
 /* === Getter functions === */

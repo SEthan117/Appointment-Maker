@@ -33,7 +33,7 @@ int main()
 		{
 		case 1:
 			printf("Add a new appointment selected\n");
-			apptListHead = createAppointment();
+			apptListHead = createAppointment("", "");
 			break;
 
 		case 2:
