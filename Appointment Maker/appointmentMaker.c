@@ -182,7 +182,7 @@ void displayAppointmentRange(P_APPT head)
 
 P_APPT searchAppointment(P_APPT apptList, char date_time[MAXVAL])
 {
-	if (apptList == NULL) { // have one book?
+	if (apptList == NULL) {
 		return NULL;
 	}
 	if (apptList->next == NULL) {
