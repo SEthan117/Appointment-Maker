@@ -178,7 +178,7 @@ P_APPT searchAppointment(P_APPT apptList)
 	printf("Please enter date of appointment to find: ");
 	scanf_s("%s", &date_time, MAXVAL);
 
-	if (apptList == NULL) { // have one book?
+	if (apptList == NULL) {
 		return NULL;
 	}
 	if (apptList->next == NULL) {
