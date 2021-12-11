@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "appointmentMaker.h"
+#include "times.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -63,14 +64,30 @@ P_APPT addAppt(P_APPT apptList)
 	int month;
 	int day;
 	int time;
-	//char description[MAXVAL];
-	//printf("Please insert date in numerical form:\n");
-	//fgets(date_time, MAXVAL, stdin);
-	//printf("Please input description:\n");
-	//fgets(description, MAXVAL, stdin);
+	printf("Insert year:\n");
+	scanf("%d", &year);
+	printf("Insert month:\n");
+	scanf("%d", &month);
+	printf("Insert day:\n");
+	scanf("%d", &day);
+	printf("Insert time rounded to the nearest hour (in 24 hour format):\n");
+	scanf("%d", &time);
+	if (checkMonth(month) == false && checkDay(day, month, year) == false && checkTime(time) == false)
+	{
+		printf("That is invalid");
+		exit(1);
+	}
+	else
+	{
+		char date_time[MAXVAL];
+		char description[MAXVAL];
+		sprintf(date_time, "%d-%d-%d-%d", year, month, day, time);
+		printf("Please input description:\n");
+		fgets(description, MAXVAL, stdin);
 
-	//P_APPT anAppt = createAppointment(date_time, description);
-	//apptList = updateList(apptList, anAppt);
+		P_APPT anAppt = createAppointment(date_time, description);
+		apptList = updateList(apptList, anAppt);
+	}
 }
 
 P_APPT updateList(P_APPT apptList, P_APPT nextAppt)

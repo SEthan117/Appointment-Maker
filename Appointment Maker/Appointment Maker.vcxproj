@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="appointmentMaker.c" />
     <ClCompile Include="Source.c" />
+    <ClCompile Include="times.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="appointmentMaker.h" />
+    <ClInclude Include="times.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,9 +21,15 @@
     <ClCompile Include="appointmentMaker.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="times.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="appointmentMaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="times.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
