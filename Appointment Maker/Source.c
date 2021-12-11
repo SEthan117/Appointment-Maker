@@ -16,7 +16,7 @@ int main()
 
 	printf("Welcome to our appointment maker\n\n\n");
 
-	
+	readAppt(apptListHead);
 	
 
 	while (apptProg)
@@ -37,7 +37,8 @@ int main()
 			break;
 
 		case 2:
-			printf("Delete an appointment selected\n");
+			//printf("Delete an appointment selected\n");
+			removeAppt(apptListHead);
 			break;
 
 		case 3:
@@ -53,7 +54,8 @@ int main()
 			break;
 
 		case 6:
-			printf("Search for appointment selected\n");
+			//printf("Search for appointment selected\n");
+			searchAppointment(apptListHead);
 			break;
 
 		case 7:

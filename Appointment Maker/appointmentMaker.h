@@ -52,9 +52,6 @@ P_APPT updateList(P_APPT, P_APPT);
 // Add a new appointment to a list
 void addNewAppointment(P_APPT);
 
-// Delete an appointment from a list
-void deleteAppointment(P_APPT);
-
 // Update an existing appointment within a list
 void updateAppointment(P_APPT);
 
@@ -65,6 +62,7 @@ void displayAppointment(P_APPT);
 void displayAppointmentRange(P_APPT);
 
 // Search for an appointment within a list
-P_APPT searchAppointment(P_APPT, char[]);
+P_APPT searchAppointment(P_APPT);
 
+// Delete an appointment from a list
 P_APPT removeAppt(P_APPT);
