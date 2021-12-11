@@ -59,15 +59,18 @@ void setPrevious(P_APPT p_appointment, P_APPT prev)
 
 P_APPT addAppt(P_APPT apptList)
 {
-	char date_time[MAXVAL];
-	char description[MAXVAL];
-	printf("Please insert date in numerical form:\n");
-	fgets(date_time, MAXVAL, stdin);
-	printf("Please input description:\n");
-	fgets(description, MAXVAL, stdin);
+	int year;
+	int month;
+	int day;
+	int time;
+	//char description[MAXVAL];
+	//printf("Please insert date in numerical form:\n");
+	//fgets(date_time, MAXVAL, stdin);
+	//printf("Please input description:\n");
+	//fgets(description, MAXVAL, stdin);
 
-	P_APPT anAppt = createAppointment(date_time, description);
-	apptList = updateList(apptList, anAppt);
+	//P_APPT anAppt = createAppointment(date_time, description);
+	//apptList = updateList(apptList, anAppt);
 }
 
 P_APPT updateList(P_APPT apptList, P_APPT nextAppt)
@@ -115,10 +118,11 @@ P_APPT readAppt(P_APPT apptList)
 
 	while (fgets(tempDATE_TIME, MAXVAL, fp) != NULL)
 	{
-		fgets(tempDATE_TIME, MAXVAL, fp);
 		tempDATE_TIME[strlen(tempDATE_TIME) - 1] = '\0';
 		fgets(tempDESCRIPTION, MAXVAL, fp);
 		tempDESCRIPTION[strlen(tempDESCRIPTION) - 1] = '\0';
+		tempAPPT = createAppointment(tempDATE_TIME, tempDESCRIPTION);
+		apptList = updateList(apptList, tempAPPT);
 	}
 
 	fclose(fp);
@@ -127,6 +131,11 @@ P_APPT readAppt(P_APPT apptList)
 }
 
 void addNewAppointment(P_APPT head)
+{
+
+}
+
+void deleteAppointment(P_APPT head)
 {
 
 }
@@ -146,17 +155,13 @@ void displayAppointmentRange(P_APPT head)
 
 }
 
-P_APPT searchAppointment(P_APPT apptList)
+P_APPT searchAppointment(P_APPT apptList, char date_time[])
 {
-	char date[MAXVAL];
-	printf("Please enter date of appointment to find: ");
-	scanf_s("%s", &date, MAXVAL);
-
 	if (apptList == NULL) { // have one book?
 		return NULL;
 	}
 	if (apptList->next == NULL) {
-		if (strcmp(apptList->date_time, date) == 1) { 
+		if (strcmp(apptList->date_time, date_time) == 1) { 
 
 			return apptList;
 		}
@@ -168,7 +173,7 @@ P_APPT searchAppointment(P_APPT apptList)
 
 	P_APPT currentAppt = apptList;
 	while (currentAppt->next != NULL) {
-		if (!strcmp(currentAppt->date_time, date)) {
+		if (!strcmp(currentAppt->date_time, date_time)) {
 
 			return currentAppt;
 		}
@@ -187,7 +192,7 @@ P_APPT removeAppt(P_APPT apptList)
 {
 	char date[MAXVAL];
 	printf("Please enter date of appointment to remove: ");
-	scanf_s("%s", &date, MAXVAL);
+	scanf_s("%s", &date);
 	P_APPT apptToRemove = searchAppointment(apptList, date);
 
 	if (apptToRemove == NULL) {

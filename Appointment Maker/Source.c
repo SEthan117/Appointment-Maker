@@ -43,6 +43,7 @@ int main()
 
 		case 3:
 			printf("Update an existing appointment selected\n");
+			apptListHead = readAppt(apptListHead);
 			break;
 
 		case 4:
