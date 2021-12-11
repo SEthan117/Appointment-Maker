@@ -32,13 +32,15 @@ int main()
 		switch (option)
 		{
 		case 1:
-			printf("Add a new appointment selected\n");
+			//printf("Add a new appointment selected\n");
 			apptListHead = addAppt(apptListHead);
+			saveAppt(apptListHead);
 			break;
 
 		case 2:
 			//printf("Delete an appointment selected\n");
 			removeAppt(apptListHead);
+			saveAppt(apptListHead);
 			break;
 
 		case 3:
