@@ -1,5 +1,7 @@
 #pragma once
 #define MAXVAL  100
+#define MONTH 12
+#define HOUR 24
 //#define MAXYEAR  10
 
 typedef struct appointment
