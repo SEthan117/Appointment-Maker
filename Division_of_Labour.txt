@@ -1,0 +1,13 @@
+Ethan
+Created UI in source.c
+added addAppt(), updateList(), saveAppt(), readAppt(), searchAppt(), removeAppt(), all of times.c and times.h
+moderate bug fixes
+
+Max Dabski
+Implemented functions in source.c
+added all setters and getters, createAppointment(), displayAppointment(), the APPT struct
+many bug fixes
+
+Dani Haroon 
+Nothing
+Left group on dec 8
