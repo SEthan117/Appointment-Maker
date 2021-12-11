@@ -84,6 +84,8 @@ P_APPT addAppt(P_APPT apptList)
 		sprintf(date_time, "%d-%d-%d-%d", year, month, day, time);
 		printf("Please input description:\n");
 		fgets(description, MAXVAL, stdin);
+		while(description == "\n")
+			fgets(description, MAXVAL, stdin);
 
 		P_APPT anAppt = createAppointment(date_time, description);
 		apptList = updateList(apptList, anAppt);
@@ -180,10 +182,6 @@ void displayAppointmentRange(P_APPT head)
 
 P_APPT searchAppointment(P_APPT apptList, char date_time[MAXVAL])
 {
-	char date_time[MAXVAL];
-	printf("Please enter date of appointment to find: ");
-	scanf_s("%s", &date_time, MAXVAL);
-
 	if (apptList == NULL) { // have one book?
 		return NULL;
 	}
@@ -212,7 +210,6 @@ P_APPT searchAppointment(P_APPT apptList, char date_time[MAXVAL])
 	}
 
 	return NULL;
-
 }
 
 P_APPT removeAppt(P_APPT apptList)
