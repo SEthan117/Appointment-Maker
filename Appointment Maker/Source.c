@@ -16,7 +16,7 @@ int main()
 
 	printf("Welcome to our appointment maker\n\n\n");
 
-	readAppt(apptListHead);
+	apptListHead = readAppt(apptListHead);
 	
 
 	while (apptProg)
@@ -48,15 +48,20 @@ int main()
 
 		case 4:
 			printf("Display a single appointment selected\n");
+			displayAppointment(apptListHead);
 			break;
 
 		case 5:
 			printf("Display appointment range selected\n");
+			displayAppointmentRange(apptListHead);
 			break;
 
+			char date[MAXVAL];
 		case 6:
 			//printf("Search for appointment selected\n");
-			searchAppointment(apptListHead);
+			printf("Please enter date of appointment to find: ");
+			scanf_s("%s", &date, MAXVAL);
+			searchAppointment(apptListHead, date);
 			break;
 
 		case 7:

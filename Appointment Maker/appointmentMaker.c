@@ -147,7 +147,13 @@ void updateAppointment(P_APPT head)
 
 void displayAppointment(P_APPT head)
 {
+	char date[MAXVAL];
+	printf("Please enter date of appointment to view: ");
+	scanf_s("%s", &date, MAXVAL);
 
+	P_APPT appt = searchAppointment(head, date);
+	printf("%s\n", appt->date_time);
+	printf("%s\n\n", appt->description);
 }
 
 void displayAppointmentRange(P_APPT head)
@@ -155,12 +161,8 @@ void displayAppointmentRange(P_APPT head)
 
 }
 
-P_APPT searchAppointment(P_APPT apptList)
+P_APPT searchAppointment(P_APPT apptList, char date_time[MAXVAL])
 {
-	char date_time[MAXVAL];
-	printf("Please enter date of appointment to find: ");
-	scanf_s("%s", &date_time, MAXVAL);
-
 	if (apptList == NULL) { // have one book?
 		return NULL;
 	}
