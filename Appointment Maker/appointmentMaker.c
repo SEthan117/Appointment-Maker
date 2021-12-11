@@ -72,7 +72,7 @@ P_APPT addAppt(P_APPT apptList)
 	scanf("%d", &day);
 	printf("Insert time rounded to the nearest hour (in 24 hour format):\n");
 	scanf("%d", &time);
-	if (checkMonth(month) == false && checkDay(day, month, year) == false && checkTime(time) == false)
+	if (checkMonth(month) == false || checkDay(day, month, year) == false || checkTime(time) == false)
 	{
 		printf("That is invalid");
 		exit(1);
